@@ -1,0 +1,203 @@
+.app-container {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  max-width: 620px;
+}
+
+/* --- Title --- */
+.app-container h1 {
+  color: #f0f0f0; 
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* --- Input & Button Group --- */
+/* This targets the div wrapping your input and button */
+.app-container .flex {
+  border-radius: 0.5rem;
+  overflow: hidden; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Password Display Input --- */
+.app-container input[type="text"] {
+  background-color: #0c0a1c;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid #4a00e0;
+  border-right: none;
+  padding: 0.75rem 1rem;
+}
+
+.app-container input[type="text"]:focus {
+  outline: none;
+}
+
+/* --- Copy Button --- */
+.app-container .copy-btn {
+  background-image: linear-gradient(to right, #8e2de2 0%, #4a00e0  51%, #8e2de2  100%);
+  background-color: transparent;
+  border: 1px solid #4a00e0;
+  border-left: none; 
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-size: 200% auto; 
+}
+
+.app-container .copy-btn:hover {
+  background-position: right center; 
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+}
+
+.app-container .copy-btn:active {
+  transform: scale(0.85); 
+}
+
+/* This targets the container for your slider and checkboxes */
+.app-container .flex.text-sm {
+  margin-top: 1.5rem;
+  color: #c5c6c7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+/* --- General Style for Labels --- */
+.app-container label {
+  font-weight: 500;
+  user-select: none; 
+  white-space: nowrap; 
+}
+
+
+/* --- Custom Range Slider Styles --- */
+.app-container input[type='range'] {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 100%; 
+  height: 7px; 
+  background: #0c0a1c;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #4a00e0;
+}
+
+/* Style for the slider handle (the little circle) */
+.app-container input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8e2de2; 
+  cursor: pointer;
+  border: 3px solid #0c0a1c;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+  margin-top: -7px; 
+}
+
+/* Style for the slider handle */
+.app-container input[type='range']::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8e2de2;
+  cursor: pointer;
+  border: 3px solid #0c0a1c;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+}
+
+
+/* --- Custom Checkbox Styles --- */
+.app-container input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4a00e0;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Style for when the checkbox is checked */
+.app-container input[type='checkbox']:checked {
+  background-color: #8e2de2;
+  border-color: #8e2de2;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+}
+
+/* Creating the checkmark using a pseudo-element */
+.app-container input[type='checkbox']:checked::after {
+  content: '✔';
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app-container input[type='range'] + label {
+  min-width: 85px; /* Gives the label a fixed space */
+}
+
+.strength-meter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  color: #c5c6c7;
+}
+
+.strength-label-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.regenerate-btn {
+  /* This styles the circular button container */
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  
+  /* This makes the icon inside white */
+  color: white; 
+  
+  /* This perfectly centers the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Effects */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.regenerate-btn:hover {
+  border-color: #8e2de2; 
+  transform: translateY(-2px); 
+}
+
+.regenerate-btn:active svg {
+  transform: rotate(360deg);
+  transition: transform 0.4s ease;
+}
